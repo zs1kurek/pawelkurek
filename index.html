@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="KurekBox.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="icon.png">
+        <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+        <title>Pawel Kurek</title>
+    </head>
+    <body>
+        <!-- bottom button -->
+        <div id="topofsite"></div>
+
+
+        <!-- LeftToRight Text -->
+        <div class="creds">
+            <font face="Comic Sans MS" color="black" size="3">
+                <marquee behavior="absolute" direction="left">Made By Nitress  //  Na stronie ukryte są 2 easter eggi</marquee>
+            </font>
+        </div>
+        <!-- LeftToRight Text -->
+
+
+        <div class="pawelkurek">
+            <h1 class='elegantshadow'>Pawel Kurek</h1>
+        </div>
+        <div class="kurekwplynie">
+            <img src="Kurekwplynie.png">
+        </div>
+        <div class="plyn">
+            <div class="box">
+                <div class="inner">
+                    <span>Kurek w płynie skurwysynie</span>
+                </div>
+                <div class="inner">
+                    <span>Kurek w płynie skurwysynie</span>
+                </div>
+            </div>
+        </div>
+        <div class="kwbox">
+            <h2>Kurek w boksie po koksie</h2>
+        </div>
+        <div class="boxkox" onclick="jumpscare();">
+            <img id="jumpscare" src="kurekwojenny.gif">
+            <img id="KurekEasterEgg" src="KurekEasterEgg.png">
+            <div id="main">
+                <div id="box">
+                    <div class="top"></div>
+                    <div>
+                        <span></span>
+                        <span><i class="tape"></i></span>
+                        <span></span>
+                        <span><i class="tape"></i></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="kurekgallery">
+            <div class="kurekwyklety">
+                <img src="kurekwyklety.png">
+                <img src="kurekpis.jpg">
+                <img src="kureksmile.jpg">
+            </div>
+        </div>
+        <div id="konamikurek">
+            <img src="hasbulla-hasbullah.gif">
+            <img src="litty-mlg.gif">
+            <img src="kurekgif.gif">
+        </div>
+
+
+        <center>
+            <canvas id="bird" width="320" height="480"></canvas>
+            <script src="game.js"></script>
+        
+            <div class="flappykurek"><span><a href="kureksnake/index.html"></a></span></div>
+        </center>
+    </body>
+    <script>
+      //Kurek w boksie
+        let box = document.getElementById('box');
+        window.onmousemove = function(e){
+            box.style.transform = "rotateX("+ -e.clientY/10 + "deg) rotateY(" + e.clientX/1.75 + "deg)" 
+        }
+      //Kurek w boksie END
+
+
+      //Kurekwojenny
+        function jumpscare() {
+            var jumpscare = document.getElementById("jumpscare");
+            jumpscare.style.visibility="visible";
+            main.style.visibility="hidden";
+            KurekEasterEgg.style.visibility="visible";
+            // const audio = new Audio('wojna.mp3');
+            // audio.volume = 1;
+            // audio.play();
+        }
+      //Kurekwojenny END
+        
+
+      // Konami Code
+        function kcl(cb) {
+        var input = '';
+        var key = '38384040373937396665';
+        document.addEventListener('keydown', function (e) {
+          input += ("" + e.keyCode);
+          if (input === key) {
+            return cb();
+          }
+          if (!key.indexOf(input)) return;
+          input = ("" + e.keyCode);
+        });
+        }
+
+        kcl(function () {
+          var konamikurek = document.getElementById("konamikurek");
+              konamikurek.style.visibility="visible";
+              main.style.visibility="hidden";
+        })
+      // Konami Code end
+    </script>
+</html>

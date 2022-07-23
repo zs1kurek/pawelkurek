@@ -1,0 +1,174 @@
+:root {
+    --width: 5vw;
+  }
+
+* {
+    margin: 0px;
+}
+
+body {
+    min-height: 90vh;
+}
+
+.boxkox{
+    margin-top: 130px;
+    margin-bottom: 150px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+#main {
+    transform: scale(1);
+    visibility: visible;
+}
+
+@media only screen and (max-width: 600px) {
+    #main {
+        transform: scale(0.5);
+    }
+  }
+
+#box {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform: rotateX(-30deg) rotateY(300deg);
+}
+
+#box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 300px;
+    background: rgba(0, 0, 0, 0.2);
+    transform: rotateX(90deg) translateZ(-220px);
+    filter: blur(15px);
+}
+
+#box div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+#box div span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#box .top {
+    transform: rotateX(90deg) translate3d(0,0,150px);
+    background: #e8bb84;
+    display: flex;
+    align-items: center;
+}
+
+#box .top::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(kurekbox.png);
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#box div span:nth-child(1) {
+    transform: rotateY(0deg) translate3d(0,0,150px);
+    background: #d8aa77;
+}
+
+#box div span:nth-child(1)::before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: url(kurekbox.png);
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#box div span:nth-child(2) {
+    transform: rotateY(90deg) translate3d(0,0,150px);
+    background: #ca9864;
+}
+
+#box div span:nth-child(2)::before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: url(kurekbox.png);
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#box div span:nth-child(3) {
+    transform: rotateY(180deg) translate3d(0,0,150px);
+    background: #d8aa77;
+}
+
+#box div span:nth-child(3)::before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: url(kurekbox.png);
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#box div span:nth-child(4) {
+    transform: rotateY(270deg) translate3d(0,0,150px);
+    background: #ca9864;
+}
+
+#box div span:nth-child(4)::before {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: url(kurekbox.png);
+    background-size: 200px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#box div span:nth-child(2) .tape {
+    transform: rotateZ(90deg);
+    top: 23px;
+    position: absolute;
+    width: 35%;
+    height: 60px;
+    background-size: 85px;
+    background-position-x: 49px;
+}
+
+#box div span:nth-child(4) .tape {
+    transform: rotateZ(-90deg);
+    top: 23px;
+    position: absolute;
+    width: 35%;
+    height: 60px;
+    background-size: 85px;
+    background-position-x: 15px;
+}
